@@ -12,7 +12,18 @@ This Design System consist of 4 sections
 4. `General`.
 
 ## Framework
-Our main framework is React.js. 
+Our main framework is React.js. In this case, we write a input.stories.js as follows: 
+```javascript
+import React from 'react';
+import './input.scss';
+
+export const Input = () => {
+  return (
+    <>
+      <input class="input-field"/>
+    </>  
+}
+```
 
 ## Contribute
 first you should pull the code base. Then you could easily use `npm run storybook` command and access to the storybook on `localhost:6006`. 
