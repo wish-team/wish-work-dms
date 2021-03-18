@@ -1,7 +1,6 @@
 {
   "name": "wish-work-dms",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -54,5 +53,9 @@
     "@semantic-release/github",
     "@semantic-release/npm",
     "@semantic-release/git"
-  ]
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js"
 }
