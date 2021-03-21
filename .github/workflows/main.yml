@@ -12,8 +12,10 @@ jobs:
           node-version: 12
       - name: Install dependencies
         run: npm install
-      - name: Build app
-        run: npm run build
+      - name: Build dist for typescript
+        run: tsc
+      - name: Build css files
+        run: npm run prepare
       - name: Semantic release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
