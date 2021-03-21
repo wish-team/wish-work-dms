@@ -20,8 +20,9 @@ import './input.scss';
 export const Input = () => {
   return (
     <>
-      <input class="input-field"/>
-    </>  
+      <input className="input-field"/>
+    </> 
+    ) 
 }
 ```
 
