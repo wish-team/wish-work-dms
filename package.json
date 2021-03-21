@@ -66,5 +66,9 @@
     "@semantic-release/github",
     "@semantic-release/npm",
     "@semantic-release/git"
-  ]
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js"
 }
