@@ -9,7 +9,7 @@ interface Props {
     name: string,
     size: string,
     label: string,
-    validateFunction: any,
+    validateFunction: object,
     message: string
 }
 
@@ -18,13 +18,17 @@ interface PropsParent {
 }
 
 interface PropsInput {
-    state: any,
-    setState: any,
-    error: any,
-    showError: any
+    state: object,
+    setState: object,
+    error: object,
+    showError: object
 }
 
-export const sampleValidateFunction = (obj: any) => {
+type obj = {
+    value: string;
+};
+
+export const sampleValidateFunction = (obj: obj) => {
     if(obj) {
         return obj.value === "error";
     }
@@ -43,7 +47,7 @@ export const Input = ({id, name, size, validateFunction, message, ...props} : Pr
     if (validateFunction !== undefined) {
         return (
             <Parent>
-            {(state, setState, error, showError) => (
+            {(state: object, setState: object, error: boolean, showError:object) => (
         <label
         className={['storybook-label-input', `storybook-label-input--${size}`].join(' ')}>
         {name}
@@ -62,7 +66,7 @@ export const Input = ({id, name, size, validateFunction, message, ...props} : Pr
     } else {
         return (
             <Parent>
-            {(state, setState, error, showErrore) => (
+            {(state: object, setState: object, error: boolean, showError: object) => (
         <label
         className={['storybook-label-input', `storybook-label-input--${size}`].join(' ')}>
         {name}
