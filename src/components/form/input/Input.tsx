@@ -4,8 +4,12 @@ import PropTypes from 'prop-types';
 import './input.scss';
 
 
+interface IError {
+
+};
+
 interface Props {
-    id: number,
+    inputId: number,
     name: string,
     size: string,
     label: string,
@@ -37,25 +41,32 @@ export const sampleValidateFunction = (obj: obj) => {
     }
 };
 
-export const Input = ({id, name, size, validateFunction, message, ...props} : Props) => {
+export const Input = ({inputId, name, size, validateFunction, message, ...props} : Props) => {
     function Parent({children, ...props} : PropsParent) {
-        const [state, setState] = useState();
-        const [error, showError] = useState(false);
+        const [state, setState] = useState<string>();
+        const [error, showError] = useState<boolean>(false);
         return <div>{children(state, setState, error, showError)}</div>;
     }
 
     if (validateFunction !== undefined) {
+        // @ts-ignore
+        // @ts-ignore
         return (
             <Parent>
-            {(state: object, setState: object, error: boolean, showError:object) => (
+            {(state: string, setState: object, error: boolean, showError: object) => (
         <label
         className={['storybook-label-input', `storybook-label-input--${size}`].join(' ')}>
         {name}
-    <input id={id}
-        className={['storybook-input', `storybook-input--${size}`].join(' ')}
-        {...props} onChange={e => setState({value: e.target.value})}
-        onBlur={() => showError(validateFunction(state))}
-        onFocus={() => showError(false)}
+            {/*// @ts-ignore*/}
+            <input id={inputId}
+        // @ts-ignore
+           className={['storybook-input', `storybook-input--${size}`].join(' ')}
+        // @ts-ignore
+           {...props} onChange={e => setState({value: e.target.value})}
+        // @ts-ignore
+           onBlur={() => showError(validateFunction(state))}
+        // @ts-ignore
+           onFocus={() => showError(false)}
         />
         {error ? <p className="storybook-input-error">
             {message || "PLEASE PASS ERROR MESSAGE <Input message={message} ..."}</p> : null}
@@ -70,10 +81,13 @@ export const Input = ({id, name, size, validateFunction, message, ...props} : Pr
         <label
         className={['storybook-label-input', `storybook-label-input--${size}`].join(' ')}>
         {name}
-    <input id={id}
+            {/*// @ts-ignore*/}
+            <input id={inputId}
         className={['storybook-input', `storybook-input--${size}`].join(' ')}
-        {...props} onChange={e => setState({value: e.target.value})}
-        onFocus={() => showError(false)}
+                // @ts-ignore
+                   {...props} onChange={e => setState({value: e.target.value})}
+                // @ts-ignore
+                   onFocus={() => showError(false)}
         />
         </label>
     )}
