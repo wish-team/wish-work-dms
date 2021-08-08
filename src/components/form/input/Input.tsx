@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
-import './input.css';
+import styles from './Input.module.css';
 
 
 interface IError {
 
-};
+}
 
 interface Props {
     inputId: number,
@@ -28,11 +28,11 @@ interface PropsInput {
     showError: object
 }
 
-type obj = {
+type errorValue = {
     value: string;
 };
 
-export const sampleValidateFunction = (obj: obj) => {
+export const sampleValidateFunction = (obj: errorValue) => {
     if(obj) {
         return obj.value === "error";
     }
@@ -55,12 +55,12 @@ export const Input = ({inputId, name, size, validateFunction, message, ...props}
             <Parent>
             {(state: string, setState: object, error: boolean, showError: object) => (
         <label
-        className={['storybook-label-input', `storybook-label-input--${size}`].join(' ')}>
+        className={[styles['storybook-label-input'], styles[`storybook-label-input--${size}`]].join(' ')}>
         {name}
             {/*// @ts-ignore*/}
             <input id={inputId}
         // @ts-ignore
-           className={['storybook-input', `storybook-input--${size}`].join(' ')}
+           className={[styles['storybook-input'], styles[`storybook-input--${size}`]].join(' ')}
         // @ts-ignore
            {...props} onChange={e => setState({value: e.target.value})}
         // @ts-ignore
@@ -68,7 +68,7 @@ export const Input = ({inputId, name, size, validateFunction, message, ...props}
         // @ts-ignore
            onFocus={() => showError(false)}
         />
-        {error ? <p className="storybook-input-error">
+        {error ? <p className={styles["storybook-input-error"]}>
             {message || "PLEASE PASS ERROR MESSAGE <Input message={message} ..."}</p> : null}
         </label>
         )}
@@ -79,11 +79,11 @@ export const Input = ({inputId, name, size, validateFunction, message, ...props}
             <Parent>
             {(state: object, setState: object, error: boolean, showError: object) => (
         <label
-        className={['storybook-label-input', `storybook-label-input--${size}`].join(' ')}>
+        className={[styles['storybook-label-input'], styles[`storybook-label-input--${size}`]].join(' ')}>
         {name}
             {/*// @ts-ignore*/}
             <input id={inputId}
-        className={['storybook-input', `storybook-input--${size}`].join(' ')}
+        className={[styles['storybook-input'], styles[`storybook-input--${size}`]].join(' ')}
                 // @ts-ignore
                    {...props} onChange={e => setState({value: e.target.value})}
                 // @ts-ignore

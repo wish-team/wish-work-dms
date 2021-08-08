@@ -1,6 +1,6 @@
 {
   "name": "wish-work-design-system",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -9,24 +9,20 @@
     "@types/node": "^12.20.6",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
+    "@types/react-select": "^4.0.17",
     "@types/styled-components": "^5.1.9",
-    "graceful-fs": "^4.2.4",
-    "gulp": "^4.0.2",
-    "gulp-clean": "^0.4.0",
-    "gulp-if": "^3.0.0",
-    "gulp-run": "^1.7.1",
-    "gulp-sass": "^5.0.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "^4.0.3",
+    "react-select": "^4.3.1",
     "styled-components": "^5.2.1",
     "typescript": "^4.2.3",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -52,15 +48,20 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.3.6",
     "@storybook/addon-essentials": "^6.3.6",
     "@storybook/addon-links": "^6.3.6",
     "@storybook/node-logger": "^6.3.6",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.6",
+    "graceful-fs": "^4.2.4",
     "gulp": "^4.0.2",
-    "semantic-release": "^17.4.2",
-    "typescript-plugin-css-modules": "^3.2.0"
+    "gulp-clean": "^0.4.0",
+    "gulp-css": "^0.1.0",
+    "gulp-if": "^3.0.0",
+    "gulp-run": "^1.7.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-uglify": "^3.0.2",
+    "semantic-release": "^17.4.2"
   },
   "plugins": [
     "@semantic-release/commit-analyzer",
@@ -73,5 +74,6 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.js"
+  "main": "dist/index.js",
+  "types": ".src/declaration.d.ts"
 }

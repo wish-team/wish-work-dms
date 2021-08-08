@@ -4,7 +4,8 @@ var gulp = require("gulp");
 var sass = require("gulp-sass")(require('sass'));
 var run = require("gulp-run");
 var clean = require("gulp-clean");
-var gulpIf = require('gulp-if');
+var uglify = require('gulp-uglify');
+var cssMin = require("gulp-css");
 
 sass.compiler = require("node-sass");
 
@@ -35,7 +36,6 @@ gulp.task("copy-css", function () {
   console.log("copy-css");
   return gulp.src("./src/**/*.css").pipe(gulp.dest("./dist"));
 });
-
 
 gulp.task("default", async function () {
   const tasks = gulp.series("clean", "compile", "sass", "copy-css");

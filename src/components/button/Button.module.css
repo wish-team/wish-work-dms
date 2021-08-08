@@ -1,27 +1,27 @@
 .storybook-button {
   font-family: 'Titillium Web', serif;
   font-weight: 700;
-  border: 0;
   border-radius: 3em;
   cursor: pointer;
-  display: inline-block;
   line-height: 1; }
 
 .storybook-button--primary {
   padding: 8px 14px;
-  background-color: #e0a722;
-  color: #183042;
-  border: none;
+  background-color: #d1036f;
+  color: #ffffff;
+  border: 2px solid #d1036f;
   border-radius: 2px; }
 
 .storybook-button--primary:hover {
   cursor: pointer;
-  background-color: #e0a722e7; }
+  background-color: #b80564; }
 
 .storybook-button--secondary {
-  color: #333;
+  padding: 8px 14px;
+  color: #d1036f;
   background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset; }
+  border: 2px solid #d1036f;
+  border-radius: 2px; }
 
 .storybook-button--small {
   font-size: 12px;

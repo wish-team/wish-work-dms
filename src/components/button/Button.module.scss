@@ -1,32 +1,32 @@
-@import "../assets/identity.scss";
+@import "../assets/identity.module.scss";
 
 .storybook-button {
   font-family: 'Titillium Web', serif;
   font-weight: 700;
-  border: 0;
   border-radius: 3em;
   cursor: pointer;
-  display: inline-block;
   line-height: 1;
 }
 
 .storybook-button--primary {
   padding: 8px 14px;
-  background-color: #e0a722;
-  color: $original-secondary-blue;
-  border: none;
+  background-color: $primary;
+  color: $white;
+  border: 2px solid $primary;
   border-radius: 2px;
 }
 
 .storybook-button--primary:hover {
   cursor: pointer;
-  background-color: #e0a722e7;
+  background-color: $primary-hover;
 }
 
 .storybook-button--secondary {
-  color: #333;
+  padding: 8px 14px;
+  color: $primary;
   background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset;
+  border: 2px solid $primary;
+  border-radius: 2px;
 }
 
 .storybook-button--small {

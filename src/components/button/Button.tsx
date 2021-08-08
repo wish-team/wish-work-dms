@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './button.css'
+import styles from "./Button.module.css"
 
 interface Props {
   primary: boolean,
@@ -13,11 +13,11 @@ interface Props {
  * Primary UI component for user interaction
  */
 export const Button = ({ primary, backgroundColor, size, label, ...props }: Props) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary'
+  const mode = primary ? styles['storybook-button--primary'] : styles['storybook-button--secondary'];
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={[styles['storybook-button'], styles[`storybook-button--${size}`], mode].join(' ')}
       style={{ backgroundColor: backgroundColor }}
       {...props}
     >
@@ -47,11 +47,11 @@ Button.propTypes = {
    * Optional click handler
    */
   onClick: PropTypes.func
-}
+};
 
 Button.defaultProps = {
   backgroundColor: null,
   primary: false,
   size: 'medium',
   onClick: undefined
-}
+};
