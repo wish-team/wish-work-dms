@@ -26,6 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
+    "build-static-webapp":"expo build:web",
     "prepare": "gulp",
     "build-storybook": "build-storybook -s public"
   },
