@@ -1,25 +1,25 @@
 @import "../assets/identity.module.scss";
 
-.nav-bar-ui-header {
+.navBarUiHeader {
   width: auto;
   height: auto;
   background-color: hsla(0,0%,100%,0);
   backdrop-filter: blur(8px);
 }
 
-.logo-nav-bar {
+.logoNavBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1rem;
 }
 
-.logo-nav-bar > img {
+.logoNavBar > img {
   height: 2.5rem;
   margin-right: 1rem;
 }
 
-.logo-nav-bar > ul {
+.logoNavBar > ul {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
@@ -27,14 +27,14 @@
   list-style-type: none;
 }
 
-.nav-bar-item > li> a {
+.navBarItem > li> a {
   padding: 0.25rem 1.25rem;
   color: $black;
   text-decoration: none;
   transition: all 0.4s ease;
 }
 
-.nav-bar-item > li > a:hover {
+.navBarItem > li > a:hover {
   color: $primary;
   transition: all 0.4s ease;
 }

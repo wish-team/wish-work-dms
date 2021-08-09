@@ -6,7 +6,8 @@ var run = require("gulp-run");
 var clean = require("gulp-clean");
 var uglify = require('gulp-uglify');
 var cssMin = require("gulp-css");
-
+const webpack = require('webpack')
+const webpackConfig = require('./webpack.config.js')
 sass.compiler = require("node-sass");
 
 gulp.task("sass", function () {
@@ -37,7 +38,21 @@ gulp.task("copy-css", function () {
   return gulp.src("./src/**/*.css").pipe(gulp.dest("./dist"));
 });
 
+gulp.task("webpack", function(cb) {
+  return new Promise((resolve, reject) => {
+      webpack(webpackConfig, (err, stats) => {
+          if (err) {
+              return reject(err)
+          }
+          if (stats.hasErrors()) {
+              return reject(new Error(stats.compilation.errors.join('\n')))
+          }
+          resolve()
+      })
+  })
+})
+
 gulp.task("default", async function () {
-  const tasks = gulp.series("clean", "compile", "sass", "copy-css");
+  const tasks = gulp.series("clean", "compile", "sass", "copy-css", "webpack");
   tasks();
 });

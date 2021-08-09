@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./UIHeader.module.css"
+import "./UIHeader.css"
 
 interface Item {
     label: string,
@@ -17,10 +17,10 @@ export const UIHeader = ({ logo, items }: Props) => {
   });
 
   return (
-    <div className={styles["nav-bar-ui-header"]}>
-      <div className={styles["logo-nav-bar"]}>
+    <div className="navBarUiHeader">
+      <div className="logoNavBar">
         <img src={logo} />
-        <ul className={styles["nav-bar-item"]}>{navBarOptions}</ul>
+        <ul className="navBarItem">{navBarOptions}</ul>
       </div>
     </div>
   );

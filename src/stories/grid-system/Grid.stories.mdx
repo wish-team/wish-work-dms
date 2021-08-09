@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import grid from './66grid.png';
+import fractionSize from './fractionSize.png';
+
+<style>{`
+.grid-class {
+    height: 50rem
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fraction-size {
+    height: 30rem
+}
+`}</style>
+
+<Meta title="Guidlines/2X Grid"/>
+
+# Grid System
+
+For creating layout, we use https://grid.layoutit.com/ as a source for creating layouts. 
+
+## Abstract
+To recap the features that display grid would offer, you could see this link.
+
+As an example, let's say we want to create a layout with 6 columns and 8 rows.
+
+<div className={"container"}>   
+    <img className={"grid-class"} src={grid}/>
+</div>
+
+
+As you see, the page has been devided into 36 fractions. you could easily change the size of each fraction on the left bar. for example, let's say we
+want to change the first fraction to 10% of the page so that navigation bar could be attached here. 
+
+<div className={"container"}>
+<img className={"fraction-size"} src={fractionSize} />
+</div>

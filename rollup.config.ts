@@ -1,7 +1,7 @@
 export default [{
     input: 'dist',
     output: {
-        folder: 'dist/index-2.js',
+        folder: 'build/index.js',
         format: 'cjs'
     }
 }];
